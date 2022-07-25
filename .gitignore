@@ -1,4 +1,8 @@
-node_modules/
-
-# Local environment for testing mid development
-dev/
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
