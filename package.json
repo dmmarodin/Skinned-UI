@@ -1,0 +1,17 @@
+{
+  "name": "skinned-ui",
+  "version": "0.1.0",
+  "description": "Styleless UI library for Svelte",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmmarodin/skinned-ui.git"
+  },
+  "author": "Douglas Marodin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmmarodin/skinned-ui/issues"
+  },
+  "homepage": "https://github.com/dmmarodin/skinned-ui#readme"
+}
