@@ -24,6 +24,11 @@
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
+	"dependencies": {
+		"@skinned-ui/style": "./src/lib/style",
+		"@types/sass": "^1.43.1",
+		"sass": "^1.54.0"
+	},
 	"devDependencies": {
 		"@playwright/test": "^1.22.2",
 		"@sveltejs/adapter-auto": "next",

@@ -1,0 +1,9 @@
+{
+	"name": "@skinned-ui/style",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.ts",
+	"scripts": {},
+	"author": "",
+	"license": "ISC"
+}
