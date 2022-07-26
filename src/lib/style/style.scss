@@ -1,3 +1,2 @@
-.sk-button {
-	background-color: red;
-}
+@use 'colors';
+@import './components/button';

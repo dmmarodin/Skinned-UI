@@ -1,9 +1,15 @@
 <script lang="ts">
-	import '../style.css';
 	import '@skinned-ui/style';
+	import '../style.css';
 	import { Button } from '$lib';
 </script>
 
 <main>
-	<Button />
+	<Button>Save</Button>
 </main>
+
+<style>
+	main {
+		padding: 35px;
+	}
+</style>
