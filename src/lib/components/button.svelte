@@ -1,7 +1,9 @@
 <script>
+	export let className = '';
+	export { className as class };
 </script>
 
-<button class="sk-button" on:click><slot /></button>
+<button type="button" class="sk-button {className}" on:click><slot /></button>
 
 <style>
 	button {
