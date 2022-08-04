@@ -1,6 +1,6 @@
 <script>
 	import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
-	import Input from './input.svelte';
+	import Input from './Input.svelte';
 </script>
 
 <Meta
@@ -16,3 +16,4 @@
 </Template>
 
 <Story name="Default" args={{ value: 'John Doe' }} />
+<Story name="Labeled" args={{ value: 'John Doe', title: 'Username' }} />

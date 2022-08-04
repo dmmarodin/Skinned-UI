@@ -1,12 +1,21 @@
 <script lang="ts">
+	import InputGroup from '../InputGroup/InputGroup.svelte';
+	import uniqueId from '../../utils/uniqueId';
+
 	export let className = '';
-	export let value = '';
 	export { className as class };
 
-	console.log(value);
+	export let value = '';
+	export let id = '';
+	export let title = '';
+
+	$: inputId = id || uniqueId();
+	$: localClass = `sk-input ${className}`;
 </script>
 
-<input type="button" class="sk-input {className}" {value} />
+<InputGroup {title} labelFor={inputId}>
+	<input type="button" id={inputId} class={localClass} {value} />
+</InputGroup>
 
 <style>
 	input {
