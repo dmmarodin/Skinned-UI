@@ -16,10 +16,3 @@
 <InputGroup {title} labelFor={inputId}>
 	<input type="button" id={inputId} class={localClass} {value} />
 </InputGroup>
-
-<style>
-	input {
-		outline: 0;
-		border: none;
-	}
-</style>
