@@ -1,13 +1,11 @@
 @use '../colors';
 
-.sk-button {
-	padding: 8px 10px;
-	color: colors.$text-light;
-	background-color: colors.$dark_gray;
-	border-radius: 5px;
-	position: relative;
-	cursor: pointer;
+$padding-vertical: 0.65rem;
+$padding-horizontal: 1.5rem;
+$outline-border-width: 3px;
+$font-size: 0.85rem;
 
+@mixin overlay_brightness {
 	&:before {
 		content: '';
 		width: 100%;
@@ -15,7 +13,6 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		// background-color: rgba(214, 231, 255, 0.2);
 		backdrop-filter: brightness(120%);
 		border-radius: 5px;
 		transition: opacity ease-in-out 0.15s;
@@ -25,4 +22,51 @@
 	&:hover:before {
 		opacity: 1;
 	}
+}
+
+@mixin button_color($color-name: null) {
+	@if $color-name {
+		$color: map-get(colors.$accent, $color-name);
+
+		&.#{$color-name}:not(.outline) {
+			background-color: $color;
+			color: colors.$text-white;
+
+			@include overlay_brightness;
+		}
+
+		&.#{$color-name}.outline {
+			background-color: transparent;
+			border-width: $outline-border-width;
+			border-style: solid;
+			border-color: $color;
+			color: $color;
+			font-weight: bold;
+			padding: calc($padding-vertical - $outline-border-width)
+				calc($padding-horizontal - $outline-border-width);
+
+			&:hover {
+				background-color: $color;
+				color: colors.$text-white;
+			}
+		}
+	} @else {
+		background-color: colors.$background-light;
+		color: colors.$text-white;
+		@include overlay_brightness;
+	}
+}
+
+.sk-button {
+	padding: 0.65rem 1.5rem;
+	border-radius: 5px;
+	position: relative;
+	cursor: pointer;
+	font-size: $font-size;
+
+	@include button_color;
+	@include button_color('blue');
+	@include button_color('purple');
+	@include button_color('green');
+	@include button_color('red');
 }
