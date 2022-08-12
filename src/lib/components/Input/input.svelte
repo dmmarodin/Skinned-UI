@@ -16,5 +16,5 @@
 </script>
 
 <InputGroup {title} labelFor={inputId} {error}>
-	<input type="button" id={inputId} class={localClass} {placeholder} bind:value />
+	<input type="text" id={inputId} class={localClass} {placeholder} bind:value />
 </InputGroup>

@@ -3,11 +3,11 @@
 
 .sk-input {
 	padding: 0.45rem 1rem;
+	border: 0;
 	background-color: colors.$background-dark;
 	border-radius: variables.$radius-small;
 	font-size: variables.$font-small;
-	color: colors.$accent-mute;
-	border: 0;
+	color: colors.$text-bright;
 	transition: all ease-in-out 0.2s;
 
 	box-sizing: border-box;
@@ -19,8 +19,14 @@
 		color: colors.$accent-red;
 	}
 
-	&:focus {
+	&:focus,
+	&:focus-visible,
+	&:focus-within {
 		border: 2px solid colors.$accent-blue;
+	}
+
+	&:placeholder {
+		color: colors.$accent-mute;
 	}
 }
 
