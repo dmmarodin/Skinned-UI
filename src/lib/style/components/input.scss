@@ -4,6 +4,7 @@
 .sk-input {
 	padding: 0.45rem 1rem;
 	border: 0;
+	width: 100%;
 	background-color: colors.$background-dark;
 	border-radius: variables.$radius-small;
 	font-size: variables.$font-small;
@@ -33,4 +34,22 @@
 .sk-input__label {
 	font-size: variables.$font-small;
 	color: colors.$text-bright;
+
+	&.error {
+		color: colors.$accent-red;
+	}
+}
+
+.sk-input__error {
+	color: colors.$accent-red;
+}
+
+.sk-input__line {
+	display: flex;
+	justify-content: space-between;
+}
+
+.sk-input__group {
+	display: inline-block;
+	min-width: 200px;
 }

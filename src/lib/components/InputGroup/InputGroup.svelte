@@ -7,7 +7,10 @@
 </script>
 
 <div type="button" class="sk-input__group {className}">
-	<label class="sk-input__label" for={labelFor}>{title}</label>
+	<div class="sk-input__line">
+		<label class="sk-input__label {error && 'error'}" for={labelFor}>{title}</label>
+		<span class="sk-input__error">{error}</span>
+	</div>
 	<slot />
 </div>
 
