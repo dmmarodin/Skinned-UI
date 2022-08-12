@@ -5,7 +5,7 @@ $padding-horizontal: 1.5rem;
 $outline-border-width: 3px;
 $font-size: 0.85rem;
 
-@mixin overlay_brightness {
+@mixin hover_brightness {
 	&:before {
 		content: '';
 		width: 100%;
@@ -32,7 +32,7 @@ $font-size: 0.85rem;
 			background-color: $color;
 			color: colors.$text-white;
 
-			@include overlay_brightness;
+			@include hover_brightness;
 		}
 
 		&.#{$color-name}.outline {
@@ -41,7 +41,6 @@ $font-size: 0.85rem;
 			border-style: solid;
 			border-color: $color;
 			color: $color;
-			font-weight: bold;
 			padding: calc($padding-vertical - $outline-border-width)
 				calc($padding-horizontal - $outline-border-width);
 
@@ -53,7 +52,10 @@ $font-size: 0.85rem;
 	} @else {
 		background-color: colors.$background-light;
 		color: colors.$text-white;
-		@include overlay_brightness;
+
+		&:not(.outline) {
+			@include hover_brightness;
+		}
 	}
 }
 
@@ -63,6 +65,7 @@ $font-size: 0.85rem;
 	position: relative;
 	cursor: pointer;
 	font-size: $font-size;
+	font-weight: bold;
 
 	@include button_color;
 	@include button_color('blue');
