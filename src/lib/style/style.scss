@@ -1,7 +1,8 @@
 @use 'colors';
 
-@import './components/button';
+@import './components/button.scss';
 @import './components/input.scss';
+@import './components/card.scss';
 
 * {
 	box-sizing: border-box;

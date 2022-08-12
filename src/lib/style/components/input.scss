@@ -1,9 +1,30 @@
+@use '../colors';
+@use '../variables';
+
 .sk-input {
 	padding: 0.45rem 1rem;
-	// border: 1px solid rgba(24, 20, 30, 0.8);
-	border: 1px solid rgba(133, 124, 150, 0.8);
-	background-color: rgba(24, 20, 30, 0.8);
-	border-radius: 0.5rem;
-	font-size: 0.8rem;
-	color: #777;
+	background-color: colors.$background-dark;
+	border-radius: variables.$radius-small;
+	font-size: variables.$font-small;
+	color: colors.$accent-mute;
+	border: 0;
+	transition: all ease-in-out 0.2s;
+
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+
+	&.error {
+		border: 2px solid colors.$accent-red;
+		color: colors.$accent-red;
+	}
+
+	&:focus {
+		border: 2px solid colors.$accent-blue;
+	}
+}
+
+.sk-input__label {
+	font-size: variables.$font-small;
+	color: colors.$text-bright;
 }

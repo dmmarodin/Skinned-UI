@@ -1,0 +1,11 @@
+@use '../colors';
+@use '../variables';
+@use '../shadow';
+
+.sk-card {
+	padding: 20px;
+	background-color: colors.$background-mid;
+	border-radius: variables.$radius-large;
+
+	@include shadow.close-shadow;
+}

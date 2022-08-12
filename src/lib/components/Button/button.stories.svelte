@@ -3,6 +3,7 @@
 	import { Meta, Story, Template } from '@storybook/addon-svelte-csf';
 	import '@skinned-ui/style';
 
+	// @ts-ignore
 	function getClass(args) {
 		const classes = [...(args.outline ? ['outline'] : [])];
 		return classes.join(' ');

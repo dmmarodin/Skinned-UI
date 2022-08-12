@@ -8,7 +8,9 @@
 	title="Components/Input"
 	component={Input}
 	argTypes={{
-		value: { control: 'text' }
+		value: { control: 'text' },
+		title: { control: 'text' },
+		error: { control: 'boolean' }
 	}}
 />
 
@@ -17,4 +19,6 @@
 </Template>
 
 <Story name="Default" args={{ value: 'John Doe' }} />
-<Story name="Labeled" args={{ value: 'John Doe', title: 'Username' }} />
+<Story name="Side Labeled" args={{ value: 'John Doe', title: 'Username' }} />
+<Story name="Top Labeled" args={{ value: 'John Doe', title: 'Username' }} />
+<Story name="Error" args={{ value: 'John Doe', title: 'Username', error: 'Invalid username' }} />

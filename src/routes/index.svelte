@@ -1,11 +1,13 @@
 <script lang="ts">
 	import '@skinned-ui/style';
 	import '../style.css';
-	import { Button } from '$lib';
+	import { Input, Card } from '$lib';
 </script>
 
-<main>
-	<Button>Save</Button>
+<main class="">
+	<Card>
+		<Input title="Username" value="John" />
+	</Card>
 </main>
 
 <style>

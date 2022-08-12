@@ -8,11 +8,13 @@
 	export let value = '';
 	export let id = '';
 	export let title = '';
+	export let placeholder = '';
+	export let error = '';
 
 	$: inputId = id || uniqueId();
-	$: localClass = `sk-input ${className}`;
+	$: localClass = ['sk-input', className, error && 'error'].join(' ');
 </script>
 
-<InputGroup {title} labelFor={inputId}>
-	<input type="button" id={inputId} class={localClass} {value} />
+<InputGroup {title} labelFor={inputId} {error}>
+	<input type="button" id={inputId} class={localClass} {placeholder} bind:value />
 </InputGroup>
