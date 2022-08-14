@@ -7,7 +7,7 @@
 	width: 100%;
 	background-color: colors.$background-dark;
 	border-radius: variables.$radius-small;
-	font-size: variables.$font-small;
+	font-size: variables.$text-small;
 	color: colors.$text-bright;
 	transition: all ease-in-out 0.2s;
 
@@ -32,7 +32,7 @@
 }
 
 .sk-input__label {
-	font-size: variables.$font-small;
+	font-size: variables.$text-small;
 	color: colors.$text-bright;
 
 	&.error {
@@ -41,15 +41,34 @@
 }
 
 .sk-input__error {
+	font-size: variables.$text-small;
 	color: colors.$accent-red;
 }
 
-.sk-input__line {
+.sk-input__top {
 	display: flex;
+	align-items: center;
 	justify-content: space-between;
+}
+
+.sk-input__bottom {
+	text-align: right;
+}
+
+.sk-input__left {
+	margin-right: 10px;
 }
 
 .sk-input__group {
 	display: inline-block;
-	min-width: 200px;
+
+	&.horizontal {
+		display: inline-flex;
+		align-items: center;
+
+		.sk-input__line {
+			display: inline-flex;
+			align-items: center;
+		}
+	}
 }

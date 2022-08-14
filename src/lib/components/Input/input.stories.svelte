@@ -11,7 +11,8 @@
 		value: { control: 'text' },
 		title: { control: 'text' },
 		placeholder: { control: 'text' },
-		error: { control: 'boolean' }
+		error: { control: 'text' },
+		horizontal: { control: 'boolean' }
 	}}
 />
 
@@ -21,6 +22,16 @@
 
 <Story name="Default" args={{ placeholder: 'Type your name here...' }} />
 <Story name="Value" args={{ value: 'John Doe' }} />
-<Story name="Side Labeled" args={{ value: 'John Doe', title: 'Username' }} />
-<Story name="Top Labeled" args={{ value: 'John Doe', title: 'Username' }} />
-<Story name="Error" args={{ value: 'John Doe', title: 'Username', error: 'Invalid username' }} />
+<Story
+	name="Horizontal Labeled"
+	args={{ value: 'John Doe', title: 'Username', horizontal: true }}
+/>
+<Story
+	name="Horizontal Error"
+	args={{ value: 'John Doe', title: 'Username', horizontal: true, error: 'Invalid username' }}
+/>
+<Story name="Vertical Labeled" args={{ value: 'John Doe', title: 'Username' }} />
+<Story
+	name="Vertical Error"
+	args={{ value: 'John Doe', title: 'Username', error: 'Invalid username' }}
+/>

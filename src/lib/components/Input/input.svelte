@@ -10,11 +10,12 @@
 	export let title = '';
 	export let placeholder = '';
 	export let error = '';
+	export let horizontal = false;
 
 	$: inputId = id || uniqueId();
 	$: localClass = ['sk-input', className, error && 'error'].join(' ');
 </script>
 
-<InputGroup {title} labelFor={inputId} {error}>
+<InputGroup {title} labelFor={inputId} {error} {horizontal}>
 	<input type="text" id={inputId} class={localClass} {placeholder} bind:value />
 </InputGroup>
