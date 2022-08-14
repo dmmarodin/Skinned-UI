@@ -2,6 +2,10 @@
 @use '../variables';
 
 .sk-input {
+	outline-style: none;
+	box-shadow: none;
+	border-color: transparent;
+
 	padding: 0.45rem 1rem;
 	border: 0;
 	width: 100%;
@@ -9,13 +13,14 @@
 	border-radius: variables.$radius-small;
 	font-size: variables.$text-small;
 	color: colors.$text-bright;
-	transition: all ease-in-out 0.2s;
-
+	transition: border-color ease-out 0.2s;
+	border-color: colors.$background-dark;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 
 	&.error {
+		padding: calc(0.45rem - 2px) calc(1rem - 2px);
 		border: 2px solid colors.$accent-red;
 		color: colors.$accent-red;
 	}
@@ -23,6 +28,8 @@
 	&:focus,
 	&:focus-visible,
 	&:focus-within {
+		outline: none;
+		padding: calc(0.45rem - 2px) calc(1rem - 2px);
 		border: 2px solid colors.$accent-blue;
 	}
 
@@ -49,6 +56,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 5px;
 }
 
 .sk-input__bottom {
