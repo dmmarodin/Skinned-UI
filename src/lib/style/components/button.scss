@@ -44,6 +44,7 @@ $font-size: 0.85rem;
 			color: $color;
 			padding: calc($padding-vertical - $outline-border-width)
 				calc($padding-horizontal - $outline-border-width);
+			transition: background-color ease-out 0.07s, color ease-out 0.07s;
 
 			&:hover {
 				background-color: $color;

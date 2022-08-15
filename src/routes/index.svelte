@@ -18,6 +18,7 @@
 		<div class="flex gap-4">
 			<Input title="Username" value="John" horizontal />
 			<Input title="Username" value="John" horizontal error="Invalid username" />
+			<Button class="blue self-end">asd</Button>
 		</div>
 	</Card>
 	<Card class="mt-4">
