@@ -2,7 +2,7 @@
 	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
 	import type { Tabs } from './types';
-	import uniqueId from '$lib/utils/uniqueId';
+	import uniqueId from '../../utils/uniqueId';
 
 	let slot: HTMLElement;
 	export let label: string;
