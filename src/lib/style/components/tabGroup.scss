@@ -1,0 +1,46 @@
+@use '../colors';
+@use '../variables';
+@use '../shadow';
+
+.sk-tabs__pages {
+	background-color: colors.$background-mid;
+	padding: 30px;
+	border-radius: variables.$radius-large;
+	z-index: 1;
+	transition: all ease-out 0.2s;
+
+	&.first {
+		border-top-left-radius: 0;
+	}
+
+	@include shadow.close-drop-shadow;
+}
+
+.sk-tabs__grouping {
+	display: inline-flex;
+}
+
+.sk-tabs__tab {
+	color: colors.$accent-mute;
+	font-weight: bold;
+	z-index: 0;
+	cursor: pointer;
+	transition: all ease-out 0.2s;
+	width: 40px;
+	height: 35px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	&.selected {
+		background-color: colors.$background-mid;
+		color: colors.$text-bright;
+		border-radius: variables.$radius-small variables.$radius-small 0 0;
+
+		@include shadow.close-drop-shadow;
+	}
+
+	&:hover {
+		color: colors.$text-bright;
+	}
+}
