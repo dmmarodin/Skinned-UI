@@ -64,11 +64,8 @@
 	vertical-align: top;
 	display: inline-block;
 
-	&.horizontal {
+	&.horizontal .sk-input__line {
+		display: flex;
 		align-items: center;
-
-		.sk-input__line {
-			align-items: center;
-		}
 	}
 }
