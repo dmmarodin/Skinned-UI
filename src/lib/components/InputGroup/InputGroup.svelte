@@ -20,8 +20,8 @@
 				<span class="sk-input__error">{error}</span>
 			</div>
 		{/if}
+		<slot />
 	</div>
-	<slot />
 	{#if horizontal}
 		<div class="sk-input__bottom">
 			<span class="sk-input__error">{error}</span>

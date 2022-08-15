@@ -8,8 +8,11 @@
 	<Card>
 		<Input title="Username" value="John" />
 		<div style="width: 10px;display:inline-block;" />
+		<Input title="Username" value="John" error="Invalid username" />
+		<div style="width: 10px;display:inline-block;" />
 		<Input title="Username" value="John" horizontal />
-		<Input title="Username" value="John" horizontal error="asdasd" />
+		<div style="width: 10px;display:inline-block;" />
+		<Input title="Username" value="John" horizontal error="Invalid username" />
 	</Card>
 </main>
 
