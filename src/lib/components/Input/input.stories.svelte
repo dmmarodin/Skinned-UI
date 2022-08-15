@@ -13,7 +13,7 @@
 		placeholder: { control: 'text' },
 		error: { control: 'text' },
 		horizontal: { control: 'boolean' },
-		required: { control: 'boolen' }
+		required: { control: 'boolean' }
 	}}
 />
 

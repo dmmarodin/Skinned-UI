@@ -40,6 +40,7 @@ $vertical-padding: 0.45rem;
 
 	&.error {
 		color: colors.$accent-red;
+		font-weight: 500;
 	}
 }
 
@@ -47,6 +48,7 @@ $vertical-padding: 0.45rem;
 	font-size: variables.$text-small;
 	color: colors.$accent-red;
 	transition: all ease-out 0.1s;
+	font-weight: 500;
 }
 
 .sk-input__top {
