@@ -2,6 +2,19 @@
 @use '../variables';
 @use '../shadow';
 
+$tab-transition: all ease-out 0.2s;
+
+@mixin svg {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	height: 20px;
+	width: 20px;
+	background-color: colors.$background-mid;
+	clip-path: path('M 0,20 H 20 A 20,20 0 0 1 0,0 Z');
+	transition: $tab-transition;
+}
+
 .sk-tabs__pages {
 	background-color: colors.$background-mid;
 	padding: 30px;
@@ -25,17 +38,43 @@
 	font-weight: bold;
 	z-index: 0;
 	cursor: pointer;
-	transition: all ease-out 0.2s;
+	transition: $tab-transition;
 	width: 40px;
 	height: 35px;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 
+	&:first-of-type.selected::before {
+		opacity: 0;
+	}
+
+	&::before {
+		@include svg;
+		left: 0;
+		transform: translateX(-100%) scaleX(-1);
+		opacity: 0;
+	}
+
+	&::after {
+		@include svg;
+		right: 0;
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
 	&.selected {
 		background-color: colors.$background-mid;
 		color: colors.$text-bright;
 		border-radius: variables.$radius-small variables.$radius-small 0 0;
+
+		&::before {
+			opacity: 1;
+		}
+
+		&::after {
+			opacity: 1;
+		}
 
 		@include shadow.close-drop-shadow;
 	}
