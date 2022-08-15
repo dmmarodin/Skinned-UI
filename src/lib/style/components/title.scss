@@ -1,0 +1,15 @@
+@use '../colors';
+@use '../variables';
+
+.sk-title {
+	margin: 0 0 25px 0;
+	padding-bottom: 15px;
+	color: colors.$text-bright;
+	border-bottom: 2px solid colors.$background-light;
+	font-size: variables.$text-large;
+	font-weight: bold;
+
+	&.bright {
+		border-bottom: 2px solid colors.$accent-mute;
+	}
+}
