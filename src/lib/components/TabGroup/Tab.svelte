@@ -5,11 +5,8 @@
 	import uniqueId from '$lib/utils/uniqueId';
 
 	let slot: HTMLElement;
-	let className = '';
-	export { className as class };
-
-	export let isDefault = false;
 	export let label: string;
+	export let isDefault = false;
 
 	const id = uniqueId();
 	const tabs = getContext('tabs') as Writable<Tabs>;
@@ -20,7 +17,5 @@
 </script>
 
 <div bind:this={slot}>
-	<div {id} class="sk-tabs__page {className}" hidden={$tabs.selected !== id}>
-		<slot />
-	</div>
+	<slot />
 </div>

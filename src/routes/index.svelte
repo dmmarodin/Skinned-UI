@@ -14,7 +14,7 @@
 				<Button class="blue outline self-end">asd</Button>
 			</div>
 		</Tab>
-		<Tab label="b">
+		<Tab label="b" isDefault>
 			<Title>Horizontal Input</Title>
 			<div class="flex gap-4">
 				<Input title="Username" value="John" horizontal />

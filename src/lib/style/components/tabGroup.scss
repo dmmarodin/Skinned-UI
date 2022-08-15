@@ -44,3 +44,13 @@
 		color: colors.$text-bright;
 	}
 }
+
+.sk-tabs__page {
+	opacity: 0;
+	position: absolute;
+
+	&.selected {
+		opacity: 1;
+		position: relative;
+	}
+}
