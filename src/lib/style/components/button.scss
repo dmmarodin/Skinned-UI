@@ -1,6 +1,7 @@
 @use '../colors';
+@use '../variables';
 
-$padding-vertical: 0.65rem;
+$padding-vertical: 0.45rem;
 $padding-horizontal: 1.5rem;
 $outline-border-width: 3px;
 $font-size: 0.85rem;
@@ -60,12 +61,13 @@ $font-size: 0.85rem;
 }
 
 .sk-button {
-	padding: 0.65rem 1.5rem;
+	padding: $padding-vertical 1.5rem;
 	border-radius: 5px;
 	position: relative;
 	cursor: pointer;
 	font-size: $font-size;
 	font-weight: bold;
+	font-size: variables.$text-small;
 
 	@include button_color;
 	@include button_color('blue');

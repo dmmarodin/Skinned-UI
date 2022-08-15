@@ -1,3 +1,4 @@
+/* @tailwind base; - optional but breaks some styles, like placeholders */
 @tailwind components;
 @tailwind utilities;
 

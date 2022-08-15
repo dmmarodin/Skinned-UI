@@ -12,7 +12,8 @@
 		title: { control: 'text' },
 		placeholder: { control: 'text' },
 		error: { control: 'text' },
-		horizontal: { control: 'boolean' }
+		horizontal: { control: 'boolean' },
+		required: { control: 'boolen' }
 	}}
 />
 
@@ -35,3 +36,4 @@
 	name="Vertical Error"
 	args={{ value: 'John Doe', title: 'Username', error: 'Invalid username' }}
 />
+<Story name="Required" args={{ title: 'Username', required: true }} />

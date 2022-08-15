@@ -1,8 +1,10 @@
 @use '../colors';
 @use '../variables';
 
+$vertical-padding: 0.45rem;
+
 .sk-input {
-	padding: 0.45rem 1rem;
+	padding: $vertical-padding 1rem;
 	border: 0;
 	width: 100%;
 	background-color: colors.$background-dark;
@@ -13,7 +15,7 @@
 	border-color: colors.$background-dark;
 
 	&.error {
-		padding: calc(0.45rem - 2px) calc(1rem - 2px);
+		padding: calc($vertical-padding - 2px) calc(1rem - 2px);
 		border: 2px solid colors.$accent-red;
 		color: colors.$accent-red;
 	}
@@ -34,6 +36,7 @@
 .sk-input__label {
 	font-size: variables.$text-small;
 	color: colors.$text-bright;
+	transition: all ease-out 0.1s;
 
 	&.error {
 		color: colors.$accent-red;
@@ -43,6 +46,7 @@
 .sk-input__error {
 	font-size: variables.$text-small;
 	color: colors.$accent-red;
+	transition: all ease-out 0.1s;
 }
 
 .sk-input__top {

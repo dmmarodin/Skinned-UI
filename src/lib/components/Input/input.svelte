@@ -11,9 +11,12 @@
 	export let placeholder = '';
 	export let error = '';
 	export let horizontal = false;
+	export let required = false;
+	export let requiredText = 'required';
 
 	$: inputId = id || uniqueId();
 	$: localClass = ['sk-input', className, error && 'error'].join(' ');
+	$: error = required && !value ? requiredText : '';
 </script>
 
 <InputGroup {title} labelFor={inputId} {error} {horizontal}>
