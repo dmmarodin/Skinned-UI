@@ -44,6 +44,7 @@ $tab-transition: all ease-out 0.2s;
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 
 	&:first-of-type.selected::before {
 		opacity: 0;
