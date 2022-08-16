@@ -11,6 +11,6 @@
 	$: selected = $tabs.selected === id;
 </script>
 
-<div class="sk-tabs__page" class:selected hidden={!selected} data-page={id}>
+<div class="sk-tabs__page" class:selected class:unselected={!selected} data-page={id}>
 	<slot />
 </div>

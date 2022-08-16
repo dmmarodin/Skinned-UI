@@ -29,19 +29,15 @@
 		{/each}
 	</div>
 	<div class="sk-tabs__pages" class:first={firstSelected}>
-		{#each Object.values($tabs.data) as tab}
-			<PageWrapper id={tab.id}>
-				{@html tab.page?.innerHTML}
-			</PageWrapper>
-		{/each}
+		<div class="sk-tabs__pages-wrapper">
+			{#each Object.values($tabs.data) as tab}
+				<PageWrapper id={tab.id}>
+					{@html tab.page?.innerHTML}
+				</PageWrapper>
+			{/each}
+		</div>
 	</div>
-	<div class="hidden">
+	<div style="visibility:hidden; diplay:none; height:0;">
 		<slot />
 	</div>
 </div>
-
-<style>
-	.hidden {
-		visibility: hidden;
-	}
-</style>
