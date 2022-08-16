@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { setContext } from 'svelte';
+	import { setContext, onMount } from 'svelte';
 	import { writable } from 'svelte/store';
 	import PageWrapper from './PageWrapper.svelte';
 	import TabWrapper from './TabWrapper.svelte';
@@ -10,14 +10,21 @@
 
 	let firstSelected = false;
 
-	const tabs = writable({ selected: '', data: {} } as Tabs);
+	const tabs = writable({ selected: null, data: {} } as Tabs);
+	const height = writable(20);
 	setContext('tabs', tabs);
+	setContext('height', height);
 
 	$: firstSelected = Object.values($tabs.data)[0]?.id === $tabs.selected;
 
 	$: if (!$tabs.selected) {
 		$tabs.selected = Object.values($tabs.data)[0]?.id;
 	}
+
+	// $: if ($tabs.selected) {
+	// 	const element = document.querySelector(`.sk-tabs__page[data-page="${$tabs.selected}"]`);
+	// 	pagesHeight = element?.clientHeight || pagesHeight;
+	// }
 </script>
 
 <div class="sk-tabs {className}">
@@ -29,7 +36,7 @@
 		{/each}
 	</div>
 	<div class="sk-tabs__pages" class:first={firstSelected}>
-		<div class="sk-tabs__pages-wrapper">
+		<div class="sk-tabs__pages-wrapper" style="height:{$height ? `${$height}px` : 'auto'}">
 			{#each Object.values($tabs.data) as tab}
 				<PageWrapper id={tab.id}>
 					{@html tab.page?.innerHTML}

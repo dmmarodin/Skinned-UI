@@ -5,6 +5,6 @@ export interface TabData {
 }
 
 export interface Tabs {
-	selected: string;
+	selected: string | null;
 	data: { [id: string]: TabData };
 }
