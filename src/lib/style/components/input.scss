@@ -7,12 +7,12 @@ $vertical-padding: 0.45rem;
 	padding: $vertical-padding 1rem;
 	border: 0;
 	width: 100%;
-	background-color: colors.$background-dark;
+	background-color: colors.$background-darker;
 	border-radius: variables.$radius-small;
 	font-size: variables.$text-small;
 	color: colors.$text-bright;
 	transition: border-color ease-out 0.1s;
-	border-color: colors.$background-dark;
+	border-color: colors.$background-darker;
 
 	&.error {
 		padding: calc($vertical-padding - 2px) calc(1rem - 2px);
