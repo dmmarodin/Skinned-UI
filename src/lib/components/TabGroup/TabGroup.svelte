@@ -20,11 +20,6 @@
 	$: if (!$tabs.selected) {
 		$tabs.selected = Object.values($tabs.data)[0]?.id;
 	}
-
-	// $: if ($tabs.selected) {
-	// 	const element = document.querySelector(`.sk-tabs__page[data-page="${$tabs.selected}"]`);
-	// 	pagesHeight = element?.clientHeight || pagesHeight;
-	// }
 </script>
 
 <div class="sk-tabs {className}">
