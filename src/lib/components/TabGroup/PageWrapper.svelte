@@ -6,6 +6,7 @@
 	export let id = '';
 	let selected: boolean;
 	let element: HTMLElement;
+	let style: string;
 
 	const tabs = getContext('tabs') as Writable<Tabs>;
 	const height = getContext('height') as Writable<number>;
@@ -25,6 +26,10 @@
 	class:unselected={selected && !selected}
 	data-page={id}
 	bind:this={element}
+	style:visibility={$tabs.mode === 'visibility' && !selected ? 'hidden' : ''}
+	style:display={$tabs.mode === 'diplay' && !selected ? 'none' : ''}
+	style:opacity={$tabs.mode === 'opacity' && !selected ? '0' : ''}
+	style:position={$tabs.mode !== 'none' && !selected ? 'absolute' : ''}
 >
 	<slot />
 </div>

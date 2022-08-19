@@ -6,5 +6,8 @@ export interface TabData {
 
 export interface Tabs {
 	selected: string | null;
+	mode: TabMode;
 	data: { [id: string]: TabData };
 }
+
+export type TabMode = 'none' | 'opacity' | 'diplay' | 'visibility';

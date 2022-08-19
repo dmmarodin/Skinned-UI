@@ -3,19 +3,21 @@
 	import { writable } from 'svelte/store';
 	import PageWrapper from './PageWrapper.svelte';
 	import TabWrapper from './TabWrapper.svelte';
-	import type { Tabs } from './types';
+	import type { Tabs, TabMode } from './types';
 
 	let className = '';
 	export { className as class };
+	export let mode: TabMode = 'diplay';
 
 	let firstSelected = false;
 
-	const tabs = writable({ selected: null, data: {} } as Tabs);
+	const tabs = writable({ selected: null, data: {}, mode } as Tabs);
 	const height = writable(20);
 	setContext('tabs', tabs);
 	setContext('height', height);
 
 	$: firstSelected = Object.values($tabs.data)[0]?.id === $tabs.selected;
+	$: $tabs.mode = mode;
 
 	$: if (!$tabs.selected) {
 		$tabs.selected = Object.values($tabs.data)[0]?.id;
