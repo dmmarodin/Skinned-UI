@@ -3,7 +3,7 @@
 	export { className as class };
 </script>
 
-<button type="button" class="sk-button {className}" on:click><slot /></button>
+<button type="button" class="sk-button {className}" on:click {...$$restProps}><slot /></button>
 
 <style>
 	button {
