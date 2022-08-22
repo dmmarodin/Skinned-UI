@@ -32,10 +32,10 @@ test('Triggers button on click action', async () => {
 		onclick: mock
 	});
 	const button = getByTestId('wrapper');
-	await fireEvent.click(button);
+	await fireEvent.click(button as HTMLElement);
 	await tick();
 
-	expect(mock.mock.calls.length).toEqual(1);
+	expect(mock).toBeCalled();
 });
 
 // Note: This is as an async test as we are using `fireEvent`
