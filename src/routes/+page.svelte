@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '@skinned-ui/style';
+	import '../lib/style/index.js';
 	import '../style.css';
 	import { Input, Card, Title, Button, TabGroup, Tab } from '$lib';
 </script>

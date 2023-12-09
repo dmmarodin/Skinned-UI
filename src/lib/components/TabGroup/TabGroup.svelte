@@ -3,7 +3,7 @@
 	import { writable } from 'svelte/store';
 	import PageWrapper from './PageWrapper.svelte';
 	import TabWrapper from './TabWrapper.svelte';
-	import type { Tabs, TabMode } from './types';
+	import type { Tabs, TabMode } from './types.ts';
 
 	let className = '';
 	export { className as class };
