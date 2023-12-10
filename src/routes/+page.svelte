@@ -2,6 +2,7 @@
 	import '../lib/style/index.js';
 	import '../style.css';
 	import { Input, Card, Title, Button, TabGroup, Tab } from '$lib';
+	import Pill from '$lib/components/Pill/Pill.svelte';
 </script>
 
 <main>
@@ -26,6 +27,10 @@
 	<Card class="mt-4">
 		<Title>Required Input</Title>
 		<Input title="Name" required />
+	</Card>
+	<Card class="mt-4">
+		<Pill class="blue">aaa</Pill>
+		<Pill class="red">aaa</Pill>
 	</Card>
 </main>
 

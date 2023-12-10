@@ -1,0 +1,15 @@
+@use '../mixins';
+@use '../variables';
+
+.sk-pill {
+    display: inline-block;
+	padding: 0.08rem 0.8rem;
+    border-radius: 15px;
+    border-width: 2px;
+
+	font-weight: bold;
+	font-size: variables.$text-small;
+
+    @include mixins.color("color");
+    @include mixins.color("border-color");
+}

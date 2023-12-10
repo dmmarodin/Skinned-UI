@@ -4,7 +4,6 @@
 $padding-vertical: 0.45rem;
 $padding-horizontal: 1.5rem;
 $outline-border-width: 3px;
-$font-size: 0.85rem;
 
 @mixin hover_brightness {
 	&:before {
@@ -78,7 +77,6 @@ $font-size: 0.85rem;
 	border-radius: 5px;
 	position: relative;
 	cursor: pointer;
-	font-size: $font-size;
 	font-weight: bold;
 	font-size: variables.$text-small;
 

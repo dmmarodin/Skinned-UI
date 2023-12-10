@@ -1,0 +1,12 @@
+@use './colors';
+@use './variables';
+
+@mixin color($rule: "background-color", $prefix: null) {
+	@each $key, $color in colors.$accent {
+        $divider: if($prefix, '-', '');
+        &.#{$prefix}#{$divider}#{$key} {
+            #{$rule}: $color;
+        }
+	}
+
+}
