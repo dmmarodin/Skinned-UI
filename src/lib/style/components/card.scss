@@ -1,6 +1,7 @@
 @use '../colors';
 @use '../variables';
 @use '../shadow';
+@use '../mixins';
 
 .sk-card {
 	padding: 25px;
@@ -8,4 +9,9 @@
 	border-radius: variables.$radius-large;
 
 	@include shadow.close-shadow;
+	@include mixins.color("background-color", "background");
+
+	&.compact {
+		padding: 15px 20px;
+	}
 }

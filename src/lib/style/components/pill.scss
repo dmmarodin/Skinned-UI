@@ -10,6 +10,6 @@
 	font-weight: bold;
 	font-size: variables.$text-small;
 
-    @include mixins.color("color");
-    @include mixins.color("border-color");
+    @include mixins.color('color', 'accent');
+    @include mixins.color('border-color', 'accent');
 }

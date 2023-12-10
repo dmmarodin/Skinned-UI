@@ -1,8 +1,7 @@
 <script lang="ts">
 	import '../lib/style/index.js';
 	import '../style.css';
-	import { Input, Card, Title, Button, TabGroup, Tab } from '$lib';
-	import Pill from '$lib/components/Pill/Pill.svelte';
+	import { Input, Card, Title, Button, TabGroup, Tab, Pill } from '$lib/index.js';
 </script>
 
 <main>
@@ -29,8 +28,12 @@
 		<Input title="Name" required />
 	</Card>
 	<Card class="mt-4">
-		<Pill class="blue">aaa</Pill>
-		<Pill class="red">aaa</Pill>
+		<Card class="light inline-block" compact>
+			<Title compact>Badges</Title>
+			<Pill class="blue">ccc</Pill>
+			<Pill class="yellow">bb</Pill>
+			<Pill class="red">aaa</Pill>
+		</Card>
 	</Card>
 </main>
 

@@ -1,7 +1,7 @@
 $background-darker: #17191f;
 $background-dark: #1f2129;
 $background-mid: #282a36;
-$background-light: #373a49;
+$background-light: #2d303d;
 
 $text-mute: #636979;
 $text-bright: #9da6be;
@@ -14,17 +14,18 @@ $accent-green: #3b9181;
 $accent-red: #a6194f;
 $accent-yellow: #c58e22;
 
+
 $background: (
-	darker: $background-darker,
-	dark: $background-dark,
-	mid: $background-mid,
-	light: $background-light
+	'darker': $background-darker,
+	'dark': $background-dark,
+	'mid': $background-mid,
+	'light': $background-light
 );
 
 $text: (
-	mute: $text-mute,
-	bright: $text-bright,
-	white: $text-white
+	'mute': $text-mute,
+	'bright': $text-bright,
+	'white': $text-white
 );
 
 $accent: (
@@ -33,7 +34,7 @@ $accent: (
 	'purple': $accent-purple,
 	'green': $accent-green,
 	'red': $accent-red,
-	'Yellow': $accent-yellow
+	'yellow': $accent-yellow
 );
 
 $colors_map: (
@@ -50,6 +51,13 @@ $colors_map: (
 	'acc-green': $accent-green,
 	'acc-red': $accent-red,
 	'acc-yellow': $accent-yellow
+);
+
+$families: (
+	'background': $background,
+	'accent': $accent,
+	'text': $text,
+	'all': $colors_map
 );
 
 :root {

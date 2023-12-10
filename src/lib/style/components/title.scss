@@ -12,4 +12,10 @@
 	&.bright {
 		border-bottom: 2px solid colors.$accent-mute;
 	}
+
+	&.compact {
+		font-size: variables.$text-lg;
+		margin: 0 0 15px 0;
+		padding-bottom: 10px;
+	}
 }

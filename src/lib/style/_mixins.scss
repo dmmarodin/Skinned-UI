@@ -1,12 +1,13 @@
 @use './colors';
 @use './variables';
+@use 'sass:map';
 
-@mixin color($rule: "background-color", $prefix: null) {
-	@each $key, $color in colors.$accent {
+@mixin color($rule: "background-color", $family: 'all', $prefix: null) {
+    $color_group: map.get(colors.$families, $family);
+	@each $key, $color in $color_group {
         $divider: if($prefix, '-', '');
         &.#{$prefix}#{$divider}#{$key} {
             #{$rule}: $color;
         }
 	}
-
 }
