@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
-	import type { Tabs } from './types';
-	import uniqueId from '../../utils/uniqueId';
+	import type { Tabs } from './types.ts';
+	import uniqueId from '../../utils/uniqueId.js';
 
 	let slot: HTMLElement;
 	export let label: string;

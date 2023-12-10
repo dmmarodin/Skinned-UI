@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
-	import type { Tabs } from './types';
+	import type { Tabs } from './types.ts';
 
 	export let id = '';
 	let selected: boolean;

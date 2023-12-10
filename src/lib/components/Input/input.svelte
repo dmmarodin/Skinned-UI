@@ -1,6 +1,6 @@
 <script lang="ts">
 	import InputGroup from '../InputGroup/InputGroup.svelte';
-	import uniqueId from '../../utils/uniqueId';
+	import uniqueId from '../../utils/uniqueId.js';
 
 	export let className = '';
 	export { className as class };
