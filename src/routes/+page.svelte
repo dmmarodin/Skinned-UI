@@ -28,8 +28,8 @@
 		<Input title="Name" required />
 	</Card>
 	<Card class="mt-4">
-		<Card class="light inline-block" compact>
-			<Title compact>Badges</Title>
+		<Card class="light compact inline-block">
+			<Title class="compact">Badges</Title>
 			<Pill class="blue">ccc</Pill>
 			<Pill class="yellow">bb</Pill>
 			<Pill class="red">aaa</Pill>

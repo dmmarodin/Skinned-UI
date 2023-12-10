@@ -1,5 +1,6 @@
 @use '../mixins';
 @use '../variables';
+@use '../colors';
 
 .sk-pill {
     display: inline-block;
@@ -10,6 +11,15 @@
 	font-weight: bold;
 	font-size: variables.$text-small;
 
-    @include mixins.color('color', 'accent');
-    @include mixins.color('border-color', 'accent');
+    &:not(.filled) {
+        @include mixins.color('color', 'accent');
+        @include mixins.color('border-color', 'accent');
+    }
+
+    &.filled {
+        @include mixins.color('background-color', 'accent');
+        @include mixins.color('border-color', 'accent');
+
+        color: colors.$text-white;
+    }
 }
