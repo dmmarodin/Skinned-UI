@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../lib/style/index.js';
 	import '../style.css';
-	import { Input, Card, Title, Button, TabGroup, Tab, Pill } from '$lib/index.js';
+	import { Input, Card, Title, Button, TabGroup, Tab, Pill, Modal } from '$lib/index.js';
 </script>
 
 <main>
@@ -35,6 +35,13 @@
 			<Pill class="red">aaa</Pill>
 		</Card>
 	</Card>
+	<Modal title="Teste" show={true}>
+		<p>asdasdasdasd</p>
+		<div slot="footer" class="flex justify-between gap-20">
+			<Button class="red">Cancel</Button>
+			<Button class="blue">Accept</Button>
+		</div>
+	</Modal>
 </main>
 
 <style>

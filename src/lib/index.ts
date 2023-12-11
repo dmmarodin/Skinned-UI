@@ -7,3 +7,4 @@ export {default as TabGroup} from "./components/TabGroup/TabGroup.svelte";
 export {default as Tab} from "./components/TabGroup/Tab.svelte";
 export {default as Title} from "./components/Title/Title.svelte";
 export {default as Pill} from "./components/Pill/Pill.svelte";
+export {default as Modal} from './components/Modal/Modal.svelte';

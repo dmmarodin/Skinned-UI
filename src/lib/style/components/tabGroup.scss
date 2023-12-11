@@ -1,17 +1,17 @@
-@use '../colors';
-@use '../variables';
-@use '../shadow';
+@use "../colors";
+@use "../variables";
+@use "../shadow";
 
 $tab-transition: all ease-out 0.2s;
 
-@mixin svg {
-	content: '';
+@mixin rouded_border_svg {
+	content: "";
 	position: absolute;
 	bottom: -1px;
 	height: 20px;
 	width: 20px;
 	background-color: colors.$background-mid;
-	clip-path: path('M 0,20 H 20 A 20,20 0 0 1 0,0 Z');
+	clip-path: path("M 0,20 H 20 A 20,20 0 0 1 0,0 Z");
 	transition: $tab-transition;
 }
 
@@ -53,14 +53,14 @@ $tab-transition: all ease-out 0.2s;
 	}
 
 	&::before {
-		@include svg;
+		@include rouded_border_svg;
 		left: 0;
 		transform: translateX(-100%) scaleX(-1);
 		opacity: 0;
 	}
 
 	&::after {
-		@include svg;
+		@include rouded_border_svg;
 		right: 0;
 		transform: translateX(100%);
 		opacity: 0;

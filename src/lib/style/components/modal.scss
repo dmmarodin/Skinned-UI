@@ -1,0 +1,73 @@
+@use "../colors";
+@use "../variables";
+@use "../shadow";
+
+$radius: variables.$radius-large;
+$outside-padding: 1.2rem;
+$close-size: 15px;
+$close-padding: 5px;
+
+// https://yqnn.github.io/svg-path-editor/
+
+.sk-modal__background {
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    backdrop-filter: blur(3px);
+}
+
+.sk-modal__body {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    border-radius: $radius;
+    min-width: 20vw;
+    background-color: colors.$background-mid;
+    @include shadow.close_shadow;
+}
+
+.sk-modal__header {
+    $padding: $outside-padding;
+    border-radius: $radius $radius 0 0;
+    padding: $padding $padding 10px $padding;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+    margin: 0 $outside-padding $outside-padding $outside-padding;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sk-modal__footer {
+    background-color: colors.$background-dark;
+    border-radius: 0 0 $radius $radius;
+    padding: 1rem;
+}
+
+.sk-modal__content {
+    $padding: $outside-padding + 0.5rem;
+    padding: 0 $padding $padding $padding;
+}
+
+.sk-modal__title {
+    color: colors.$text-white;
+    font-size: variables.$text-lg;
+    font-weight: 600;
+}
+
+.sk-modal__close__wrapper {
+    cursor: pointer;
+    padding: $close-padding;
+
+    &:hover > * {
+        background-color: colors.$text-bright;
+    }
+}
+
+.sk-modal__close {
+    height: $close-size;
+    width: $close-size;
+    background-color: colors.$text-mute;
+    transition: all ease-in-out 0.1s;
+    clip-path: path(
+        "M 12.6 0.7875 C 14.175 -0.7875 16.5375 1.575 14.9625 3.15 L 10.2375 7.875 L 14.9625 12.6 C 16.5375 14.175 14.175 16.5375 12.6 14.9625 L 7.875 10.2375 L 3.15 14.9625 C 1.575 16.5375 -0.7875 14.175 0.7875 12.6 L 5.5125 7.875 L 0.7875 3.15 C -0.7875 1.575 1.575 -0.7875 3.15 0.7875 L 7.875 5.5125 L 12.6 0.7875"
+    );
+}
