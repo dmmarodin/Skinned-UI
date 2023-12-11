@@ -13,23 +13,23 @@
 </script>
 
 {#if show}
-	<div class="sk-modal__background" />
-	<div class="sk-modal__body {className}">
-		<div class="sk-modal__header">
+	<div class="sk-modal__background" on:click={() => dispatch('close')} aria-hidden class:show />
+	<div class="sk-modal__body {className}" class:show>
+		<div class="sk-modal__header" class:show>
 			<slot name="header">
 				{#if title}
 					<ModalTitle>{title}</ModalTitle>
 				{/if}
 				{#if closable}
-					<ModalCloseButton on:click={() => dispatch('close', {})} />
+					<ModalCloseButton on:click={() => dispatch('close')} />
 				{/if}
 			</slot>
 		</div>
-		<div class="sk-modal__content">
+		<div class="sk-modal__content" class:show>
 			<slot />
 		</div>
 		{#if $$slots.footer}
-			<div class="sk-modal__footer">
+			<div class="sk-modal__footer" class:show>
 				<slot name="footer" />
 			</div>
 		{/if}
