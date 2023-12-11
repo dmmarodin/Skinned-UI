@@ -1,11 +1,15 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
 	import ModalTitle from './ModalTitle.svelte';
 	import ModalCloseButton from './ModalCloseButton.svelte';
 
 	export let title = '';
 	export let show = false;
+	export let closable = true;
 	let className = '';
 	export { className as class };
+
+	const dispatch = createEventDispatcher();
 </script>
 
 {#if show}
@@ -16,7 +20,9 @@
 				{#if title}
 					<ModalTitle>{title}</ModalTitle>
 				{/if}
-				<ModalCloseButton />
+				{#if closable}
+					<ModalCloseButton on:click={() => dispatch('close', {})} />
+				{/if}
 			</slot>
 		</div>
 		<div class="sk-modal__content">

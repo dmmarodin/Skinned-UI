@@ -2,6 +2,8 @@
 	import '../lib/style/index.js';
 	import '../style.css';
 	import { Input, Card, Title, Button, TabGroup, Tab, Pill, Modal } from '$lib/index.js';
+
+	let showModal = false;
 </script>
 
 <main>
@@ -33,13 +35,15 @@
 			<Pill class="blue">ccc</Pill>
 			<Pill class="yellow">bb</Pill>
 			<Pill class="red">aaa</Pill>
+			<Button class="blue self-end" on:click={() => (showModal = true)}>Show Modal</Button>
 		</Card>
 	</Card>
-	<Modal title="Teste" show={true}>
-		<p>asdasdasdasd</p>
+	<Modal title="Teste" show={showModal} on:close={() => (showModal = false)}>
+		<p class="mb-4">This is a modal that can contain any other elements as content.</p>
+		<Input title="Name" value="John" horizontal />
 		<div slot="footer" class="flex justify-between gap-20">
-			<Button class="red">Cancel</Button>
-			<Button class="blue">Accept</Button>
+			<Button class="red" on:click={() => (showModal = false)}>Cancel</Button>
+			<Button class="blue" on:click={() => (showModal = false)}>Accept</Button>
 		</div>
 	</Modal>
 </main>
