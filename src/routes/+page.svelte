@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../lib/style/index.js';
 	import '../style.css';
-	import { Input, Card, Title, Button, TabGroup, Tab, Pill, Modal } from '$lib/index.js';
+	import { Input, Card, Title, Button, TabGroup, Tab, Pill, Modal, Select } from '$lib/index.js';
 
 	let showModal = false;
 </script>
@@ -18,9 +18,9 @@
 		</Tab>
 		<Tab label="b" isDefault>
 			<Title>Horizontal Input</Title>
-			<div class="flex gap-4">
+			<div class="">
 				<Input title="Name" value="John" horizontal />
-				<Input title="Name" value="John" horizontal error="Invalid username" />
+				<Input title="Name" value="John" horizontal error="Invalid username" class="mx-4" />
 				<Button class="blue self-end">asd</Button>
 			</div>
 		</Tab>
@@ -37,6 +37,13 @@
 			<Pill class="red">aaa</Pill>
 			<Button class="blue self-end" on:click={() => (showModal = true)}>Show Modal</Button>
 		</Card>
+		<Select title="Country" class="ml-4" nullable>
+			<option>Algeria</option>
+			<option>Brazil</option>
+			<option>Germany</option>
+			<option>Holland</option>
+			<option>United States of America</option>
+		</Select>
 	</Card>
 	<Modal title="Teste" show={showModal} on:close={() => (showModal = false)}>
 		<p class="mb-4">This is a modal that can contain any other elements as content.</p>

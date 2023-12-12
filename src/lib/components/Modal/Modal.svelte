@@ -13,7 +13,12 @@
 </script>
 
 {#if show}
-	<div class="sk-modal__background" on:click={() => dispatch('close')} aria-hidden class:show />
+	<div
+		class="sk-modal__background"
+		on:click={() => closable && dispatch('close')}
+		aria-hidden
+		class:show
+	/>
 	<div class="sk-modal__body {className}" class:show>
 		<div class="sk-modal__header" class:show>
 			<slot name="header">

@@ -1,9 +1,9 @@
-@use '../colors';
-@use '../variables';
+@use "../colors";
+@use "../variables";
 
 $vertical-padding: 0.45rem;
 
-.sk-input {
+@mixin base_input {
 	padding: $vertical-padding 1rem;
 	border: 0;
 	width: 100%;
@@ -31,6 +31,10 @@ $vertical-padding: 0.45rem;
 	&:placeholder {
 		color: colors.$accent-mute;
 	}
+}
+
+.sk-input {
+	@include base_input;
 }
 
 .sk-input__label {

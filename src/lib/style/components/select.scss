@@ -1,0 +1,40 @@
+@use "../colors";
+@use "../variables";
+@use "./input.scss";
+
+$vertical-padding: 0.45rem;
+$caret-width: 15px;
+$caret-height: 9px;
+$padding-right: $caret-width * 2 + 10px;
+
+.sk-select__wrapper {
+    position: relative;
+}
+
+.sk-select {
+    @include base_input;
+    appearance: none;
+    padding-right: $padding-right;
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+        outline: none;
+        padding: calc(0.45rem - 2px) calc(1rem - 2px);
+        border: 2px solid colors.$accent-blue;
+        padding-right: $padding-right - 2px !important;
+    }
+}
+
+.sk-select__caret {
+    background-color: colors.$accent-mute;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    width: $caret-width;
+    height: $caret-height;
+    transform: translate(0px, -50%);
+    clip-path: path(
+        "M 12.6 0.7875 C 14.175 -0.7875 16.5375 1.575 14.9625 3.15 L 10.2375 7.875 C 8 10 8 10 5.5125 7.875 L 0.7875 3.15 C -0.7875 1.575 1.575 -0.7875 3.15 0.7875 C 7 5 7 5 8 5 C 9 5 9 5 12.6 0.7875"
+    );
+}
