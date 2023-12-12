@@ -38,3 +38,19 @@ $padding-right: $caret-width * 2 + 10px;
         "M 12.6 0.8 C 14.2 -0.8 16.5 1.6 15 3.1 L 10.2 7.9 C 8 10 8 10 5.5 7.9 L 0.8 3.1 C -0.8 1.6 1.6 -0.8 3.1 0.8 C 7 5 7 5 8 5 C 9 5 9 5 12.6 0.8"
     );
 }
+
+.dark .sk-select {
+    background-color: colors.$background-darker;
+
+    &:disabled {
+        background-color: colors.$background-mid;
+    }
+}
+
+.light .sk-select {
+    background-color: colors.$background-dark;
+
+    &:disabled {
+        background-color: colors.$background-mid;
+    }
+}

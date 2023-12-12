@@ -9,6 +9,7 @@
 	export let id = '';
 	export let title = '';
 	export let placeholder = '';
+	export let disabled = false;
 	export let error = '';
 	export let horizontal = false;
 	export let required = false;
@@ -16,9 +17,9 @@
 
 	$: inputId = id || uniqueId();
 	$: localClass = ['sk-input', error && 'error'].join(' ');
-	$: error = required && !value ? requiredText : '';
+	$: error = !disabled && required && !value ? requiredText : '';
 </script>
 
-<InputGroup {title} class={className} labelFor={inputId} {error} {horizontal}>
-	<input type="text" id={inputId} class={localClass} {placeholder} bind:value />
+<InputGroup {title} class={className} labelFor={inputId} {error} {horizontal} {disabled}>
+	<input type="text" id={inputId} class={localClass} {placeholder} bind:value {disabled} />
 </InputGroup>

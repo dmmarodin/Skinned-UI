@@ -1,5 +1,5 @@
-@use '../colors';
-@use '../variables';
+@use "../colors";
+@use "../variables";
 
 $padding-vertical: 0.45rem;
 $padding-horizontal: 1.5rem;
@@ -7,7 +7,7 @@ $outline-border-width: 3px;
 
 @mixin hover_brightness {
 	&:before {
-		content: '';
+		content: "";
 		width: 100%;
 		height: 100%;
 		position: absolute;
@@ -53,9 +53,10 @@ $outline-border-width: 3px;
 			border-style: solid;
 			border-color: $color;
 			color: $color;
-			padding: calc($padding-vertical - $outline-border-width)
-				calc($padding-horizontal - $outline-border-width);
-			transition: background-color ease-out 0.07s, color ease-out 0.07s;
+			padding: calc($padding-vertical - $outline-border-width) calc($padding-horizontal - $outline-border-width);
+			transition:
+				background-color ease-out 0.07s,
+				color ease-out 0.07s;
 
 			&:hover {
 				background-color: $color;
@@ -63,16 +64,19 @@ $outline-border-width: 3px;
 			}
 		}
 	} @else {
-		background-color: colors.$background-light;
-		color: colors.$text-white;
+		background-color: transparent;
+		color: colors.$accent-mute;
+		border: $outline-border-width solid colors.$accent-mute;
 
 		&:not(.outline) {
+			background-color: colors.$accent-mute;
+			color: colors.$text-white;
 			@include hover_brightness;
 		}
 	}
 }
 
-.sk-button {
+button.sk-button {
 	padding: $padding-vertical 1.5rem;
 	border-radius: 5px;
 	position: relative;

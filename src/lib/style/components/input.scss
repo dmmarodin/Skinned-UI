@@ -2,6 +2,7 @@
 @use "../variables";
 
 $vertical-padding: 0.45rem;
+$border-width: 2px;
 
 @mixin base_input {
 	padding: $vertical-padding 1rem;
@@ -15,8 +16,8 @@ $vertical-padding: 0.45rem;
 	border-color: colors.$background-darker;
 
 	&.error {
-		padding: calc($vertical-padding - 2px) calc(1rem - 2px);
-		border: 2px solid colors.$accent-red;
+		padding: calc($vertical-padding - $border-width) calc(1rem - $border-width);
+		border: $border-width solid colors.$accent-red;
 		color: colors.$accent-red;
 	}
 
@@ -24,12 +25,18 @@ $vertical-padding: 0.45rem;
 	&:focus-visible,
 	&:focus-within {
 		outline: none;
-		padding: calc(0.45rem - 2px) calc(1rem - 2px);
-		border: 2px solid colors.$accent-blue;
+		padding: calc(0.45rem - $border-width) calc(1rem - $border-width);
+		border: $border-width solid colors.$accent-blue;
 	}
 
 	&:placeholder {
 		color: colors.$accent-mute;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		background-color: colors.$background-light;
+		border: $border-width solid colors.$background-mid;
 	}
 }
 
@@ -37,45 +44,18 @@ $vertical-padding: 0.45rem;
 	@include base_input;
 }
 
-.sk-input__label {
-	font-size: variables.$text-small;
-	color: colors.$text-bright;
-	transition: all ease-out 0.1s;
+.dark .sk-input {
+	background-color: colors.$background-darker;
 
-	&.error {
-		color: colors.$accent-red;
-		font-weight: 500;
+	&:disabled {
+		background-color: colors.$background-mid;
 	}
 }
 
-.sk-input__error {
-	font-size: variables.$text-small;
-	color: colors.$accent-red;
-	transition: all ease-out 0.1s;
-	font-weight: 500;
-}
+.light .sk-input {
+	background-color: colors.$background-dark;
 
-.sk-input__top {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 5px;
-}
-
-.sk-input__bottom {
-	text-align: right;
-}
-
-.sk-input__left {
-	margin-right: 10px;
-}
-
-.sk-input__group {
-	vertical-align: top;
-	display: inline-block;
-
-	&.horizontal .sk-input__line {
-		display: flex;
-		align-items: center;
+	&:disabled {
+		background-color: colors.$background-mid;
 	}
 }
