@@ -1,0 +1,34 @@
+@use "../colors";
+@use "../variables";
+@use "./input.scss";
+
+$checkbox_size: 1.5rem;
+$check_width: 14px;
+$check_height: 12px;
+
+.sk-checkbox {
+    width: $checkbox_size;
+    height: $checkbox_size;
+    background-color: colors.$background-dark;
+    border-radius: $checkbox_size / 3;
+    border: 2px solid colors.$accent-mute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: colors.$background-mid;
+        border-color: colors.$text-mute;
+    }
+}
+
+.sk-checkbox__check {
+    width: $check_width;
+    height: $check_height;
+    background-color: colors.$accent-blue;
+    clip-path: path(
+        "M 11.286 1.254 L 6.27 6.27 C 5.016 7.524 5.016 7.524 3.762 6.27 L 2.508 5.016 C 1.254 3.762 -1.045 5.225 1.045 7.315 L 3.135 9.405 C 5.225 11.495 5.225 11.495 7.315 9.405 C 10.45 6.27 10.45 6.27 13.585 3.135 C 14.63 1.045 12.54 0 11.286 1.254"
+    );
+}

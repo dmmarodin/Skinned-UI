@@ -1,7 +1,18 @@
 <script lang="ts">
 	import '../lib/style/index.js';
 	import '../style.css';
-	import { Input, Card, Title, Button, TabGroup, Tab, Pill, Modal, Select } from '$lib/index.js';
+	import {
+		Input,
+		Card,
+		Title,
+		Button,
+		TabGroup,
+		Tab,
+		Pill,
+		Modal,
+		Select,
+		Checkbox
+	} from '$lib/index.js';
 
 	let showModal = false;
 </script>
@@ -44,6 +55,8 @@
 			<option>Holland</option>
 			<option>United States of America</option>
 		</Select>
+		<Checkbox title="Send Header Info" class="mx-4" />
+		<Checkbox title="Save on file" class="mx-4" horizontal />
 	</Card>
 	<Modal title="Teste" show={showModal} on:close={() => (showModal = false)}>
 		<p class="mb-4">This is a modal that can contain any other elements as content.</p>
