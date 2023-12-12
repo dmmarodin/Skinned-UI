@@ -11,7 +11,8 @@
 		Pill,
 		Modal,
 		Select,
-		Checkbox
+		Checkbox,
+		Switch
 	} from '$lib/index.js';
 
 	let showModal = false;
@@ -43,10 +44,12 @@
 	<Card class="mt-4">
 		<Card class="light compact inline-block">
 			<Title class="compact">Badges</Title>
-			<Pill class="blue">ccc</Pill>
-			<Pill class="yellow">bb</Pill>
-			<Pill class="red">aaa</Pill>
-			<Button class="blue self-end" on:click={() => (showModal = true)}>Show Modal</Button>
+			<div class="flex gap-4 items-center">
+				<Pill class="blue">ccc</Pill>
+				<Pill class="yellow">bb</Pill>
+				<Pill class="red">aaa</Pill>
+				<Button class="blue self-end" on:click={() => (showModal = true)}>Show Modal</Button>
+			</div>
 		</Card>
 		<Select title="Country" class="ml-4" nullable>
 			<option>Algeria</option>
@@ -57,6 +60,8 @@
 		</Select>
 		<Checkbox title="Send Header Info" class="mx-4" />
 		<Checkbox title="Save on file" class="mx-4" horizontal />
+		<Switch title="Alternative Input" class="mx-4" />
+		<Switch title="Alternative Output" class="mx-4" horizontal />
 	</Card>
 	<Modal title="Teste" show={showModal} on:close={() => (showModal = false)}>
 		<p class="mb-4">This is a modal that can contain any other elements as content.</p>

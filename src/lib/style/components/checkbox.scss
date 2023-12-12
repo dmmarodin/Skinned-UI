@@ -18,6 +18,13 @@ $check_height: 12px;
     transition: all 0.2s;
     cursor: pointer;
 
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+        outline: none;
+        border-color: colors.$accent-blue;
+    }
+
     &:hover {
         background-color: colors.$background-mid;
         border-color: colors.$text-mute;

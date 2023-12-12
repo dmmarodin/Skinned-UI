@@ -1,0 +1,48 @@
+@use "../colors";
+@use "../variables";
+@use "./input.scss";
+
+$switch-width: 2.3rem;
+$switch-height: 1.4rem;
+$switch-ball-padding: 0.5rem;
+$switch-ball-size: $switch-height - $switch-ball-padding;
+
+.sk-switch {
+    background-color: colors.$accent-mute;
+    width: $switch-width;
+    height: $switch-height;
+    border-radius: $switch-width / 2;
+    position: relative;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    border: 2px solid colors.$accent-mute;
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within {
+        outline: none;
+        border-color: colors.$accent-blue;
+    }
+
+    &:after {
+        content: " ";
+        position: absolute;
+        width: $switch-ball-size;
+        height: $switch-ball-size;
+        background-color: colors.$text-white;
+        border-radius: 100%;
+        top: 50%;
+        left: $switch-ball-padding / 2;
+        transform: translateY(-50%);
+        transition: all 0.2s;
+    }
+
+    &.checked {
+        background-color: colors.$accent-blue;
+        border-color: colors.$accent-blue;
+
+        &:after {
+            left: calc($switch-width - $switch-ball-size - $switch-ball-padding + 2px);
+        }
+    }
+}

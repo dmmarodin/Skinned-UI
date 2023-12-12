@@ -15,14 +15,12 @@
 <InputGroup {title} class={className} labelFor={inputId} {horizontal}>
 	<input id={inputId} type="checkbox" aria-hidden hidden bind:value />
 	<button
-		class="sk-checkbox"
+		class="sk-switch"
+		class:checked={value}
 		on:click={() => (value = !value)}
 		role="checkbox"
 		aria-checked={value}
 		tabindex="0"
 	>
-		{#if value}
-			<div class="sk-checkbox__check" />
-		{/if}
 	</button>
 </InputGroup>
