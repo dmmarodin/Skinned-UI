@@ -4,6 +4,7 @@
 
 	export let id = '';
 	export let value: boolean = false;
+	export let disabled = false;
 	export let title: string;
 	export let horizontal = false;
 	let className = '';
@@ -12,15 +13,16 @@
 	$: inputId = id || uniqueId();
 </script>
 
-<InputGroup {title} class={className} labelFor={inputId} {horizontal}>
-	<input id={inputId} type="checkbox" aria-hidden hidden bind:value />
+<InputGroup {title} class={className} labelFor={inputId} {horizontal} {disabled}>
+	<input id={inputId} type="checkbox" aria-hidden hidden {disabled} bind:value />
 	<button
 		class="sk-switch"
+		class:disabled
 		class:checked={value}
-		on:click={() => (value = !value)}
+		on:click={() => !disabled && (value = !value)}
 		role="checkbox"
 		aria-checked={value}
-		tabindex="0"
+		tabindex={disabled ? -1 : 0}
 	>
 	</button>
 </InputGroup>

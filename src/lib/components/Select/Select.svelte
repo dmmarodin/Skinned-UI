@@ -6,6 +6,7 @@
 	export let value = '';
 	export let title: string;
 	export let error = '';
+	export let disabled = false;
 	export let nullable = false;
 	export let horizontal = false;
 	export let required = false;
@@ -18,9 +19,9 @@
 	$: error = required && !value ? requiredText : '';
 </script>
 
-<InputGroup {title} class={className} labelFor={inputId} {error} {horizontal}>
+<InputGroup {title} class={className} labelFor={inputId} {error} {horizontal} {disabled}>
 	<div class="sk-select__wrapper">
-		<select class={localClass} bind:value>
+		<select class={localClass} {disabled} bind:value>
 			{#if nullable}
 				<option value=""></option>
 			{/if}

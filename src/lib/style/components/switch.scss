@@ -19,7 +19,8 @@ $switch-ball-size: $switch-height - $switch-ball-padding;
 
     &:focus,
     &:focus-visible,
-    &:focus-within {
+    &:focus-within,
+    &:hover {
         outline: none;
         border-color: colors.$accent-blue;
     }
@@ -35,6 +36,23 @@ $switch-ball-size: $switch-height - $switch-ball-padding;
         left: $switch-ball-padding / 2;
         transform: translateY(-50%);
         transition: all 0.2s;
+    }
+
+    &.disabled {
+        background-color: colors.$background-light;
+        cursor: not-allowed;
+
+        &:after {
+            background-color: colors.$accent-mute;
+        }
+
+        &:focus,
+        &:focus-visible,
+        &:focus-within,
+        &:hover {
+            outline: none;
+            border-color: colors.$accent-mute;
+        }
     }
 
     &.checked {

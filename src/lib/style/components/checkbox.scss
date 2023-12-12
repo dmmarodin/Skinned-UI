@@ -27,7 +27,24 @@ $check_height: 12px;
 
     &:hover {
         background-color: colors.$background-mid;
-        border-color: colors.$text-mute;
+        border-color: colors.$accent-blue;
+    }
+
+    &.disabled {
+        background-color: colors.$background-light;
+        cursor: not-allowed;
+
+        &:focus,
+        &:focus-visible,
+        &:focus-within {
+            outline: none;
+            border-color: colors.$accent-mute;
+        }
+
+        &:hover {
+            background-color: colors.$background-mid;
+            border-color: colors.$accent-mute;
+        }
     }
 }
 

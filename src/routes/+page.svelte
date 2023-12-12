@@ -60,15 +60,17 @@
 					<Input title="Disabled" disabled />
 				</div>
 				<div class="inline-flex flex-col gap-2">
-					<Select title="Country" class="ml-4" nullable>
+					<Select title="Country" class="ml-4" nullable disabled>
 						<option>Algeria</option>
 						<option>Brazil</option>
 						<option>Germany</option>
 						<option>Holland</option>
 						<option>United States of America</option>
 					</Select>
-					<Checkbox title="Send Header Info" class="mx-4" />
-					<Switch title="Alternative Input" class="mx-4" />
+					<Checkbox title="Checkbox" class="mx-4" />
+					<Checkbox title="Checkbox disabled" class="mx-4" disabled />
+					<Switch title="Switch" class="mx-4" />
+					<Switch title="Switch disabled" class="mx-4" disabled />
 				</div>
 			</div>
 		</Card>
@@ -88,8 +90,10 @@
 						<option>Holland</option>
 						<option>United States of America</option>
 					</Select>
-					<Checkbox title="Send Header Info" class="mx-4" />
-					<Switch title="Alternative Input" class="mx-4" />
+					<Checkbox title="Checkbox" class="mx-4" />
+					<Checkbox title="Checkbox disabled" class="mx-4" disabled />
+					<Switch title="Switch" class="mx-4" />
+					<Switch title="Switch disabled" class="mx-4" disabled />
 				</div>
 			</div>
 		</Card>
@@ -109,8 +113,10 @@
 						<option>Holland</option>
 						<option>United States of America</option>
 					</Select>
-					<Checkbox title="Send Header Info" class="mx-4" />
-					<Switch title="Alternative Input" class="mx-4" />
+					<Checkbox title="Checkbox" class="mx-4" />
+					<Checkbox title="Checkbox disabled" class="mx-4" disabled />
+					<Switch title="Switch" class="mx-4" />
+					<Switch title="Switch disabled" class="mx-4" disabled />
 				</div>
 			</div>
 		</Card>
