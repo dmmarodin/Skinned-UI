@@ -11,3 +11,6 @@ export {default as Modal} from './components/Modal/Modal.svelte';
 export {default as Select} from './components/Select/Select.svelte';
 export {default as Checkbox} from './components/Checkbox/Checkbox.svelte';
 export {default as Switch} from './components/Switch/Switch.svelte';
+export {default as ToastContainer} from './components/Toast/ToastContainer.svelte';
+export { Toast } from './components/Toast/types.js';
+export { toast } from './components/Toast/ToastStore.js';

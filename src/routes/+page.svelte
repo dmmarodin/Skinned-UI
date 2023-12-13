@@ -12,8 +12,21 @@
 		Modal,
 		Select,
 		Checkbox,
-		Switch
+		Switch,
+		ToastContainer,
+		toast,
+		Toast
 	} from '$lib/index.js';
+
+	const closeModal = () => {
+		toast.push(
+			new Toast('Toast openened successfully', {
+				duration: 5000
+			})
+		);
+
+		showModal = false;
+	};
 
 	let showModal = false;
 </script>
@@ -144,10 +157,11 @@
 		<p class="mb-4">This is a modal that can contain any other elements as content.</p>
 		<Input title="Name" value="John" horizontal />
 		<div slot="footer" class="flex justify-between gap-20">
-			<Button class="red" on:click={() => (showModal = false)}>Cancel</Button>
-			<Button class="blue" on:click={() => (showModal = false)}>Accept</Button>
+			<Button class="red" on:click={closeModal}>Cancel</Button>
+			<Button class="blue" on:click={closeModal}>Accept</Button>
 		</div>
 	</Modal>
+	<ToastContainer />
 </main>
 
 <style>
