@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { toast } from './ToastStore.ts';
+	import { toast } from './ToastStore.js';
 	import Toast from './Toast.svelte';
 
 	let items = new Array();

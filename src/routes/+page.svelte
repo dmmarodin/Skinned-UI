@@ -19,11 +19,7 @@
 	} from '$lib/index.js';
 
 	const closeModal = () => {
-		toast.push(
-			new Toast('Toast openened successfully', {
-				duration: 5000
-			})
-		);
+		toast.warning('Title', 'content');
 
 		showModal = false;
 	};
