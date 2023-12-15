@@ -19,7 +19,7 @@
 	} from '$lib/index.js';
 
 	const closeModal = () => {
-		toast.warning('Title', 'content');
+		toast.loading('Title', 'content');
 
 		showModal = false;
 	};

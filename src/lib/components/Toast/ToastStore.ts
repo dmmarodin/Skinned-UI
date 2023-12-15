@@ -3,6 +3,14 @@ import { Toast, type ToastOpts } from "./types.js";
 
 import WarningIcon from '$lib/components/Icon/WarningIcon.svelte';
 import WarningToast from './WarningToast.svelte';
+import ErrorIcon from '../Icon/ErrorIcon.svelte';
+import ErrorToast from './ErrorToast.svelte';
+import CheckIcon from '../Icon/CheckIcon.svelte';
+import InfoToast from './InfoToast.svelte';
+import InfoIcon from '../Icon/InfoIcon.svelte';
+import LoadingIcon from '../Icon/LoadingIcon.svelte';
+import LoadingToast from './LoadingToast.svelte';
+import SuccessToast from './SuccessToast.svelte';
 
 class ToastStore {
     store: Writable<Toast[]> = writable(new Array());
@@ -12,6 +20,26 @@ class ToastStore {
         this.push(new Toast(WarningToast, { title, content }, {
             ...opts,
             icon: WarningIcon
+        }))
+    }
+
+    error(title: string, content: string, opts?: ToastOpts) {
+        this.push(new Toast(ErrorToast, { title, content }, {
+            ...opts,
+            icon: ErrorIcon
+        }))
+    }
+    info(title: string, content: string, opts?: ToastOpts) {
+        this.push(new Toast(InfoToast, { title, content }, {
+            ...opts,
+            icon: InfoIcon
+        }))
+    }
+
+    success(title: string, content: string, opts?: ToastOpts) {
+        this.push(new Toast(SuccessToast, { title, content }, {
+            ...opts,
+            icon: CheckIcon
         }))
     }
 

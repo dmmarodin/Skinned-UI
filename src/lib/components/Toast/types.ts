@@ -8,6 +8,10 @@ export interface ToastOpts {
     onClose?: () => void
 }
 
+export interface PromiseToastOpts<T> {
+    onSuccess: (v: T) => void,
+}
+
 const defaultOpts = {
     duration: 0,
 }
