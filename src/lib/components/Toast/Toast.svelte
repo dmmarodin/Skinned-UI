@@ -35,7 +35,7 @@
 	class="sk-toast min-w-[300px]"
 	class:clickable={item.opts.onClick}
 >
-	<div class="flex items-start gap-8">
+	<div class="sk-toast__wrapper">
 		{#if item.opts.icon}
 			<div class="sk-toast__icon__wrapper">
 				<svelte:component this={item.opts.icon} />
