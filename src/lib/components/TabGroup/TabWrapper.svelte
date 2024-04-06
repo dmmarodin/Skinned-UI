@@ -17,6 +17,6 @@
 	$: selected = $tabs.selected === id;
 </script>
 
-<div class="sk-tabs__tab {className}" class:selected on:click={click} data-page={id}>
+<button class="sk-tabs__tab {className}" class:selected on:click={click} data-page={id}>
 	<slot />
-</div>
+</button>

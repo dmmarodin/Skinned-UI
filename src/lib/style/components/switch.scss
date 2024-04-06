@@ -1,6 +1,7 @@
-@use "../colors";
-@use "../variables";
-@use "./input.scss";
+@use '../colors';
+@use '../variables';
+@use './input.scss';
+@use 'sass:math';
 
 $switch-width: 2.3rem;
 $switch-height: 1.4rem;
@@ -8,59 +9,59 @@ $switch-ball-padding: 0.5rem;
 $switch-ball-size: $switch-height - $switch-ball-padding;
 
 .sk-switch {
-    background-color: colors.$accent-mute;
-    width: $switch-width;
-    height: $switch-height;
-    border-radius: $switch-width / 2;
-    position: relative;
-    transition: background-color 0.2s;
-    cursor: pointer;
-    border: 2px solid colors.$accent-mute;
+	background-color: colors.$accent-mute;
+	width: $switch-width;
+	height: $switch-height;
+	border-radius: math.div($switch-width, 2);
+	position: relative;
+	transition: background-color 0.2s;
+	cursor: pointer;
+	border: 2px solid colors.$accent-mute;
 
-    &:focus,
-    &:focus-visible,
-    &:focus-within,
-    &:hover {
-        outline: none;
-        border-color: colors.$accent-blue;
-    }
+	&:focus,
+	&:focus-visible,
+	&:focus-within,
+	&:hover {
+		outline: none;
+		border-color: colors.$accent-blue;
+	}
 
-    &:after {
-        content: " ";
-        position: absolute;
-        width: $switch-ball-size;
-        height: $switch-ball-size;
-        background-color: colors.$text-white;
-        border-radius: 100%;
-        top: 50%;
-        left: $switch-ball-padding / 2;
-        transform: translateY(-50%);
-        transition: all 0.2s;
-    }
+	&:after {
+		content: ' ';
+		position: absolute;
+		width: $switch-ball-size;
+		height: $switch-ball-size;
+		background-color: colors.$text-white;
+		border-radius: 100%;
+		top: 50%;
+		left: math.div($switch-ball-padding, 2);
+		transform: translateY(-50%);
+		transition: all 0.2s;
+	}
 
-    &.disabled {
-        background-color: colors.$background-light;
-        cursor: not-allowed;
+	&.disabled {
+		background-color: colors.$background-light;
+		cursor: not-allowed;
 
-        &:after {
-            background-color: colors.$accent-mute;
-        }
+		&:after {
+			background-color: colors.$accent-mute;
+		}
 
-        &:focus,
-        &:focus-visible,
-        &:focus-within,
-        &:hover {
-            outline: none;
-            border-color: colors.$accent-mute;
-        }
-    }
+		&:focus,
+		&:focus-visible,
+		&:focus-within,
+		&:hover {
+			outline: none;
+			border-color: colors.$accent-mute;
+		}
+	}
 
-    &.checked {
-        background-color: colors.$accent-blue;
-        border-color: colors.$accent-blue;
+	&.checked {
+		background-color: colors.$accent-blue;
+		border-color: colors.$accent-blue;
 
-        &:after {
-            left: calc($switch-width - $switch-ball-size - $switch-ball-padding + 2px);
-        }
-    }
+		&:after {
+			left: calc($switch-width - $switch-ball-size - $switch-ball-padding + 2px);
+		}
+	}
 }
