@@ -19,7 +19,7 @@
 	} from '$lib/index.js';
 
 	const closeModal = () => {
-		toast.loading('Title', 'content');
+		toast.success('Title', 'content');
 
 		showModal = false;
 	};
@@ -141,12 +141,24 @@
 			<Button class="mute" on:click={() => (showModal = true)}>Show Modal</Button>
 		</div>
 		<div class="flex gap-2 mt-2">
-			<Button class="red outline" on:click={() => (showModal = true)}>Show Modal</Button>
-			<Button class="yellow outline" on:click={() => (showModal = true)}>Show Modal</Button>
-			<Button class="blue outline" on:click={() => (showModal = true)}>Show Modal</Button>
-			<Button class="purple outline" on:click={() => (showModal = true)}>Show Modal</Button>
-			<Button class="green outline" on:click={() => (showModal = true)}>Show Modal</Button>
-			<Button class="mute outline" on:click={() => (showModal = true)}>Show Modal</Button>
+			<Button class="red outline" on:click={() => toast.error('Title', 'content')}
+				>Show Toast</Button
+			>
+			<Button class="yellow outline" on:click={() => toast.warning('Title', 'content')}
+				>Show Toast</Button
+			>
+			<Button class="blue outline" on:click={() => toast.info('Title', 'content')}
+				>Show Toast</Button
+			>
+			<Button class="purple outline" on:click={() => toast.progress('Title', 'content')}
+				>Show Toast</Button
+			>
+			<Button class="green outline" on:click={() => toast.success('Title', 'content')}
+				>Show Toast</Button
+			>
+			<Button class="mute outline" on:click={() => toast.info('Title', 'content')}
+				>Show Toast</Button
+			>
 		</div>
 	</Card>
 	<Modal title="Teste" show={showModal} on:close={() => (showModal = false)}>

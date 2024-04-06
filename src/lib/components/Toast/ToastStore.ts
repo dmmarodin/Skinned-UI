@@ -1,5 +1,5 @@
 import { writable, type Writable } from 'svelte/store';
-import { Toast, type ToastOpts } from "./types.js";
+import { Toast, type ToastOpts } from './types.js';
 
 import WarningIcon from '$lib/components/Icon/WarningIcon.svelte';
 import WarningToast from './WarningToast.svelte';
@@ -9,48 +9,90 @@ import CheckIcon from '../Icon/CheckIcon.svelte';
 import InfoToast from './InfoToast.svelte';
 import InfoIcon from '../Icon/InfoIcon.svelte';
 import LoadingIcon from '../Icon/LoadingIcon.svelte';
-import LoadingToast from './LoadingToast.svelte';
+import LoadingToast from './ProgressToast.svelte';
 import SuccessToast from './SuccessToast.svelte';
 
+const defaultToast: ToastOpts = {
+	duration: 3000
+};
+
 class ToastStore {
-    store: Writable<Toast[]> = writable(new Array());
-    public subscribe = this.store.subscribe;
+	store: Writable<Toast[]> = writable(new Array());
+	public subscribe = this.store.subscribe;
 
-    warning(title: string, content: string, opts?: ToastOpts) {
-        this.push(new Toast(WarningToast, { title, content }, {
-            ...opts,
-            icon: WarningIcon
-        }))
-    }
+	warning(title: string, content: string, opts = defaultToast) {
+		this.push(
+			new Toast(
+				WarningToast,
+				{ title, content },
+				{
+					...opts,
+					icon: WarningIcon
+				}
+			)
+		);
+	}
 
-    error(title: string, content: string, opts?: ToastOpts) {
-        this.push(new Toast(ErrorToast, { title, content }, {
-            ...opts,
-            icon: ErrorIcon
-        }))
-    }
-    info(title: string, content: string, opts?: ToastOpts) {
-        this.push(new Toast(InfoToast, { title, content }, {
-            ...opts,
-            icon: InfoIcon
-        }))
-    }
+	error(title: string, content: string, opts = defaultToast) {
+		this.push(
+			new Toast(
+				ErrorToast,
+				{ title, content },
+				{
+					...opts,
+					icon: ErrorIcon
+				}
+			)
+		);
+	}
 
-    success(title: string, content: string, opts?: ToastOpts) {
-        this.push(new Toast(SuccessToast, { title, content }, {
-            ...opts,
-            icon: CheckIcon
-        }))
-    }
+	info(title: string, content: string, opts = defaultToast) {
+		this.push(
+			new Toast(
+				InfoToast,
+				{ title, content },
+				{
+					...opts,
+					icon: InfoIcon
+				}
+			)
+		);
+	}
 
-    push(toast: Toast) {
-        console.log("pushing: " + JSON.stringify(toast));
-        this.store.update((s) => [{ ...toast }, ...s]);
-    }
+	success(title: string, content: string, opts = defaultToast) {
+		this.push(
+			new Toast(
+				SuccessToast,
+				{ title, content },
+				{
+					...opts,
+					icon: CheckIcon
+				}
+			)
+		);
+	}
 
-    delete(id: string) {
-        this.store.update((s) => s.filter(v => v.id != id));
-    }
+	progress(title: string, content: string, opts = defaultToast) {
+		this.push(
+			new Toast(
+				LoadingToast,
+				{ title, content },
+				{
+					...opts,
+					icon: LoadingIcon
+				}
+			)
+		);
+	}
+
+	push(toast: Toast) {
+		console.log('pushing: ' + JSON.stringify(toast));
+		this.store.update((s) => [{ ...toast }, ...s]);
+	}
+
+	delete(id: string) {
+		this.store.update((s) => s.filter((v) => v.id != id));
+	}
 }
 
 export const toast = new ToastStore();
