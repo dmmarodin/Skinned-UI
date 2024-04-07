@@ -2,6 +2,7 @@
 	import { toast } from './ToastStore.js';
 	import type { Toast } from './types.ts';
 	import { tweened } from 'svelte/motion';
+	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
 	export let item: Toast;
@@ -34,6 +35,7 @@
 	on:click={() => onClick()}
 	class="sk-toast min-w-[300px]"
 	class:clickable={item.opts.onClick}
+	transition:slide
 >
 	<div class="sk-toast__wrapper">
 		{#if item.opts.icon}

@@ -14,8 +14,7 @@
 		Checkbox,
 		Switch,
 		ToastContainer,
-		toast,
-		Toast
+		toast
 	} from '$lib/index.js';
 
 	const closeModal = () => {

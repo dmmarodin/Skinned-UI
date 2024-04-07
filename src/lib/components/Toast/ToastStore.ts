@@ -12,15 +12,11 @@ import LoadingIcon from '../Icon/LoadingIcon.svelte';
 import LoadingToast from './ProgressToast.svelte';
 import SuccessToast from './SuccessToast.svelte';
 
-const defaultToast: ToastOpts = {
-	duration: 3000
-};
-
 class ToastStore {
 	store: Writable<Toast[]> = writable(new Array());
 	public subscribe = this.store.subscribe;
 
-	warning(title: string, content: string, opts = defaultToast) {
+	warning(title: string, content: string, opts?: ToastOpts) {
 		this.push(
 			new Toast(
 				WarningToast,
@@ -33,7 +29,7 @@ class ToastStore {
 		);
 	}
 
-	error(title: string, content: string, opts = defaultToast) {
+	error(title: string, content: string, opts?: ToastOpts) {
 		this.push(
 			new Toast(
 				ErrorToast,
@@ -46,7 +42,7 @@ class ToastStore {
 		);
 	}
 
-	info(title: string, content: string, opts = defaultToast) {
+	info(title: string, content: string, opts?: ToastOpts) {
 		this.push(
 			new Toast(
 				InfoToast,
@@ -59,7 +55,7 @@ class ToastStore {
 		);
 	}
 
-	success(title: string, content: string, opts = defaultToast) {
+	success(title: string, content: string, opts?: ToastOpts) {
 		this.push(
 			new Toast(
 				SuccessToast,
@@ -72,7 +68,7 @@ class ToastStore {
 		);
 	}
 
-	progress(title: string, content: string, opts = defaultToast) {
+	progress(title: string, content: string, opts?: ToastOpts) {
 		this.push(
 			new Toast(
 				LoadingToast,
@@ -86,7 +82,6 @@ class ToastStore {
 	}
 
 	push(toast: Toast) {
-		console.log('pushing: ' + JSON.stringify(toast));
 		this.store.update((s) => [{ ...toast }, ...s]);
 	}
 
