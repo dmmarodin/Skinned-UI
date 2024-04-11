@@ -1,58 +1,34 @@
-# create-svelte
+# Gorge UI - WIP
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A headless UI library with optional dark theme styling for Svelte. Simple. Made for Tailwind CSS. Customizable through CSS.
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+Check out example [`example page`](https://dmmarodin.github.io/gorge-ui/).
 
-## Creating a project
+## images
 
-If you're seeing this, you've probably already done this step. Congrats!
+![Example Page](docs/example-page.png)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Components
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+Currently there are the following components available:
 
-## Developing
+- Buttons
+- Text Inputs
+- Checkbox
+- Switch
+- Cards
+- Tab panel
+- Badges
+- Modals with controls
+- Toast notifications
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Roadmap
 
-```bash
-npm run dev
+- Documentation and examples for each component.
+- Masking and validation for different input types.
+- Radio buttons.
+- Promise-based API for toast control.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Usage
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
-
-## Building
-
-To build your library:
-
-```bash
-npm run package
-```
-
-To create a production version of your showcase app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
-```
+Not yet available as a package. Coming soon.
