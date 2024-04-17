@@ -2,7 +2,7 @@
 
 A headless UI library with optional dark theme styling for Svelte. Simple. Made for Tailwind CSS. Customizable through CSS.
 
-Check out example [`example page`](https://dmmarodin.github.io/gorge-ui/).
+Check out the [`example page`](https://dmmarodin.github.io/gorge-ui/).
 
 ## images
 
