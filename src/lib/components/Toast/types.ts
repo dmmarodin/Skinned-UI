@@ -8,12 +8,17 @@ export interface ToastOpts {
 }
 
 export type PromiseToastOpts = ToastOpts & {
-	onSuccess: Toast;
-	onFailure: Toast;
+	onSuccessToast?: ToastProps;
+	onFailureToast?: ToastProps;
 };
 
+export interface ToastProps {
+	title?: string;
+	content?: string;
+}
+
 const defaultToastOpts: ToastOpts = {
-	duration: 15000,
+	duration: 3000,
 	props: {},
 	progress: true
 };

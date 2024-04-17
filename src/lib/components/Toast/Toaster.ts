@@ -6,7 +6,7 @@ import PromiseToast from './PromiseToast.svelte';
 import SuccessToast from './SuccessToast.svelte';
 import { toastStore } from './ToastStore.js';
 import WarningToast from './WarningToast.svelte';
-import { Toast, type ToastOpts } from './types.js';
+import { Toast, type PromiseToastOpts, type ToastOpts } from './types.js';
 
 class Toaster {
 	public success(title: string, content: string, opts?: ToastOpts) {
@@ -32,7 +32,12 @@ class Toaster {
 		toastStore.push(toast);
 	}
 
-	public promise(promise: Promise<unknown>, title: string, content: string, opts?: ToastOpts) {
+	public promise(
+		promise: Promise<unknown>,
+		title: string,
+		content: string,
+		opts?: PromiseToastOpts
+	) {
 		const loadingToastId = uniqueId();
 		const loadingToast = new Toast(loadingToastId, PromiseToast, title, content, {
 			...opts,
@@ -44,19 +49,31 @@ class Toaster {
 		return promise
 			.then((result) => {
 				toastStore.delete(loadingToastId);
-				const successToast = new Toast(uniqueId(), SuccessToast, title, content, {
-					...opts,
-					icon: CheckIcon
-				});
+				const successToast = new Toast(
+					uniqueId(),
+					SuccessToast,
+					opts?.onSuccessToast?.title ?? title,
+					opts?.onSuccessToast?.content ?? content,
+					{
+						...opts,
+						icon: CheckIcon
+					}
+				);
 				toastStore.push(successToast);
 				return new Promise((res) => res(result));
 			})
 			.catch((e) => {
 				toastStore.delete(loadingToastId);
-				const rejectionToast = new Toast(uniqueId(), ErrorToast, title, content, {
-					...opts,
-					icon: ErrorIcon
-				});
+				const rejectionToast = new Toast(
+					uniqueId(),
+					ErrorToast,
+					opts?.onFailureToast?.title ?? title,
+					opts?.onFailureToast?.content ?? content,
+					{
+						...opts,
+						icon: ErrorIcon
+					}
+				);
 				toastStore.push(rejectionToast);
 				return new Promise((_, rej) => rej(e));
 			});

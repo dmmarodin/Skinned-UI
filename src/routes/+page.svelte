@@ -18,8 +18,6 @@
 	} from '$lib/index.js';
 
 	const closeModal = () => {
-		// toaster.success('Title', 'content');
-
 		showModal = false;
 	};
 
@@ -28,17 +26,17 @@
 			const a = await toaster.promise(
 				new Promise((res, rej) => {
 					setTimeout(() => {
-						rej('asdasd');
-						// res('aaa');
+						res({ data: 'my data' });
 					}, 1500);
 				}),
-				'Title',
-				'content'
+				'Promise',
+				'Promise pending...',
+				{
+					onSuccessToast: { title: 'Success', content: 'Promise resolved' },
+					onFailureToast: { title: 'Error', content: 'Promise was rejected' }
+				}
 			);
-			console.log(a);
-		} catch (e) {
-			console.log(e);
-		}
+		} catch (e) {}
 	};
 
 	let showModal = false;
@@ -168,10 +166,7 @@
 				Show Toast
 			</Button>
 			<Button class="purple outline" on:click={test}>Show Toast</Button>
-			<Button
-				class="green outline"
-				on:click={() => toaster.success('Title', 'content', { duration: 0 })}
-			>
+			<Button class="green outline" on:click={() => toaster.success('Title', 'content')}>
 				Show Toast
 			</Button>
 			<Button class="mute outline" on:click={() => toaster.info('Title', 'content')}>
