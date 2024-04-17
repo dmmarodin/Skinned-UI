@@ -1,5 +1,5 @@
-let lastId = 0;
+import { v4 as uuid } from 'uuid';
 
 export default () => {
-	return `sk-${++lastId}`;
+	return `sk-${uuid()}`;
 };

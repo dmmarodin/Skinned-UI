@@ -1,13 +1,12 @@
 <script lang="ts">
-	import { toast } from './ToastStore.js';
-	import Toast from './Toast.svelte';
+	import { toastStore } from './ToastStore.js';
+	import Toast from './ToastItem.svelte';
 
-	let items = new Array();
-	$: items = $toast;
+	$: items = $toastStore;
 </script>
 
 <div class="sk-toast__container">
-	{#each items as item (item.id)}
+	{#each Object.values(items) as item (item.id)}
 		<Toast {item} />
 	{/each}
 </div>

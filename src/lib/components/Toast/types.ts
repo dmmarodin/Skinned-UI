@@ -1,34 +1,42 @@
-import type { SvelteComponent } from 'svelte';
-import uniqueId from '../../utils/uniqueId.js';
-
 export interface ToastOpts {
 	duration?: number;
-	icon?: ConstructorOfATypedSvelteComponent;
-	onClick?: () => void;
+	props?: object;
+	icon?: Component;
+	progress?: boolean;
 	onClose?: () => void;
+	onClick?: () => void;
 }
 
-export interface PromiseToastOpts<T> {
-	onSuccess: (v: T) => void;
-}
+export type PromiseToastOpts = ToastOpts & {
+	onSuccess: Toast;
+	onFailure: Toast;
+};
 
-const defaultOpts = {
-	duration: 3000
+const defaultToastOpts: ToastOpts = {
+	duration: 15000,
+	props: {},
+	progress: true
 };
 
 export class Toast {
-	public id: string;
 	public opts: ToastOpts;
 
 	constructor(
-		public component: ConstructorOfATypedSvelteComponent,
-		public props?: object,
+		public id: string,
+		public component: Component,
+		public title: string,
+		public content: string,
 		opts?: ToastOpts
 	) {
-		this.id = uniqueId();
 		this.opts = {
-			...defaultOpts,
+			...defaultToastOpts,
 			...opts
 		};
 	}
 }
+
+export type ToastDict = {
+	[id: string]: Toast;
+};
+
+export type Component = ConstructorOfATypedSvelteComponent;

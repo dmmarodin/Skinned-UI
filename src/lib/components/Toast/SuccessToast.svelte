@@ -1,9 +1,12 @@
 <script lang="ts">
-	export let title: string;
-	export let content: string;
+	import CheckIcon from '../Icon/CheckIcon.svelte';
+	import ToastContent from './ToastContent.svelte';
+	import type { Toast } from './types.js';
+
+	export let toast: Toast;
 </script>
 
-<div>
-	<h3 class="sk-success-color sk-toast__title">{title}</h3>
-	<p>{content}</p>
-</div>
+<ToastContent icon={CheckIcon}>
+	<h3 class="sk-success-color sk-toast__title">{toast.title}</h3>
+	<p>{toast.content}</p>
+</ToastContent>

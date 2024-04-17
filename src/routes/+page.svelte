@@ -14,13 +14,31 @@
 		Checkbox,
 		Switch,
 		ToastContainer,
-		toast
+		toaster
 	} from '$lib/index.js';
 
 	const closeModal = () => {
-		toast.success('Title', 'content');
+		// toaster.success('Title', 'content');
 
 		showModal = false;
+	};
+
+	const test = async () => {
+		try {
+			const a = await toaster.promise(
+				new Promise((res, rej) => {
+					setTimeout(() => {
+						rej('asdasd');
+						// res('aaa');
+					}, 1500);
+				}),
+				'Title',
+				'content'
+			);
+			console.log(a);
+		} catch (e) {
+			console.log(e);
+		}
 	};
 
 	let showModal = false;
@@ -140,24 +158,25 @@
 			<Button class="mute" on:click={() => (showModal = true)}>Show Modal</Button>
 		</div>
 		<div class="flex gap-2 mt-2">
-			<Button class="red outline" on:click={() => toast.error('Title', 'content')}
-				>Show Toast</Button
+			<Button class="red outline" on:click={() => toaster.error('Title', 'content')}>
+				Show Toast
+			</Button>
+			<Button class="yellow outline" on:click={() => toaster.warning('Title', 'content')}>
+				Show Toast
+			</Button>
+			<Button class="blue outline" on:click={() => toaster.info('Title', 'content')}>
+				Show Toast
+			</Button>
+			<Button class="purple outline" on:click={test}>Show Toast</Button>
+			<Button
+				class="green outline"
+				on:click={() => toaster.success('Title', 'content', { duration: 0 })}
 			>
-			<Button class="yellow outline" on:click={() => toast.warning('Title', 'content')}
-				>Show Toast</Button
-			>
-			<Button class="blue outline" on:click={() => toast.info('Title', 'content')}
-				>Show Toast</Button
-			>
-			<Button class="purple outline" on:click={() => toast.progress('Title', 'content')}
-				>Show Toast</Button
-			>
-			<Button class="green outline" on:click={() => toast.success('Title', 'content')}
-				>Show Toast</Button
-			>
-			<Button class="mute outline" on:click={() => toast.info('Title', 'content')}
-				>Show Toast</Button
-			>
+				Show Toast
+			</Button>
+			<Button class="mute outline" on:click={() => toaster.info('Title', 'content')}>
+				Show Toast
+			</Button>
 		</div>
 	</Card>
 	<Modal title="Teste" show={showModal} on:close={() => (showModal = false)}>
