@@ -1,6 +1,6 @@
 # Skinned UI - WIP
 
-A headless UI library with optional dark theme styling for Svelte. Simple. Made for Tailwind CSS. Customizable through CSS.
+A "Skinless" (headless) UI library with optional dark theme styling for Svelte. Simple. Made for Tailwind CSS. Customizable through CSS.
 
 Check out the [`example page`](https://dmmarodin.github.io/Skinned-UI/).
 
@@ -20,14 +20,13 @@ Currently there are the following components available:
 - Tab panel
 - Badges
 - Modals with controls
-- Toast notifications
+- Promise based API for toast notifications.
 
 ## Roadmap
 
 - Documentation and examples for each component.
 - Masking and validation for different input types.
 - Radio buttons.
-- Promise-based API for toast control.
 
 ## Usage
 
